@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react'
+import AppLayout from '../components/layout/AppLayout'
 
 
 const Home = () => {
@@ -15,4 +16,5 @@ const Home = () => {
   )
 }
 
-export default Home
+// eslint-disable-next-line react-refresh/only-export-components
+export default AppLayout()(Home)
