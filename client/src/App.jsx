@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React,{lazy} from 'react'
+import React,{lazy, Suspense} from 'react'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import NotFound from './pages/NotFound'
+import LayoutLoader from './components/layout/Loaders'
 const Home=lazy(()=>import('./pages/Home'))
 const Login=lazy(()=>import('./pages/Login'))
 const Chat=lazy(()=>import('./pages/Chat'))
@@ -11,6 +12,8 @@ const App = () => {
   let user=true
   return (
 <BrowserRouter>
+<Suspense fallback={<LayoutLoader/>}>
+
 <Routes>
 
   <Route element={<ProtectedRoute user={user}/>}>
@@ -25,6 +28,7 @@ const App = () => {
  <Route path="*" element={<NotFound/>}/>
  
 </Routes>
+</Suspense>
 </BrowserRouter>
   )
 }
