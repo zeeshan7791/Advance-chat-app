@@ -1,17 +1,28 @@
-import { Samplehats } from "../constants/sampleData";
+import { useParams } from "react-router-dom";
+import { sampleChats } from "../constants/sampleData";
 import Title from "../shared/Title";
 import ChatList from "../specific/ChatList";
 import Header from "./Header";
 import Grid from "@mui/material/Grid";
+import Profile from "../specific/Profile";
 
 const AppLayout = () => (WrappedComponent) => {
   // eslint-disable-next-line react/display-name
   return (props) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const params = useParams();
+    const chatId = params.chatId;
+
+    const handleDeleteChat = (e, _id, groupChat) => {
+      e.preventDefault();
+      console.log(`Delete chat triggered for ID: ${_id}, Group: ${groupChat}`);
+    };
+
     return (
       <>
         <Title />
         <Header />
-        <Grid container height={"calc(100vh-4rem)"}>
+        <Grid container height={"calc(100vh - 4rem)"}>
           <Grid
             item
             xs={4}
@@ -21,12 +32,20 @@ const AppLayout = () => (WrappedComponent) => {
             }}
             height={"100%"}
           >
-            fIRST
-            <ChatList chats={Samplehats} />
+            <ChatList
+              chats={sampleChats}
+              chatId={chatId}
+              newMessagesAlert={[
+                {
+                  chatId,
+                  count: 4,
+                },
+              ]}
+              handleDeleteChat={handleDeleteChat}
+            />
           </Grid>
           <Grid item xs={12} sm={8} md={5} lg={6} height={"100%"}>
-            {" "}
-            <WrappedComponent {...props} />{" "}
+            <WrappedComponent {...props} />
           </Grid>
           <Grid
             item
@@ -39,7 +58,7 @@ const AppLayout = () => (WrappedComponent) => {
               bgcolor: "rgba(0,0,0,0.85)",
             }}
           >
-          first
+           <Profile/>
           </Grid>
         </Grid>
 
