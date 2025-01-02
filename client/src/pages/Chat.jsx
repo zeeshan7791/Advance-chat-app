@@ -7,7 +7,7 @@ const Chat = () => {
  
   return (
     <div>
-    Chat
+    ChatApp
     </div>
   )
 }
