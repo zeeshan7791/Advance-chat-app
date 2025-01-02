@@ -15,11 +15,12 @@ width:"1"
 
 })
 
-export const Link=styled(LinkComponent)`({
-    text-decoration:none,
-    color:black,
-    padding:1rem,
-    &:hover{
-        background-color:#f0f0f0;
-    }
-})`
+export const Link = styled(LinkComponent)`
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+
+  &:hover {
+    background-color:rgba(0,0,0,0.1);
+  }
+`;
