@@ -8,7 +8,6 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { orange } from "@mui/material/colors";
 import {
   Add as AddIcon,
   Menu as MenuIcon,
@@ -18,6 +17,7 @@ import {
   Notifications as NotificationIcon
 } from "@mui/icons-material";
 import {useNavigate} from "react-router-dom"
+import { orange } from "../constants/Color";
 
 const SearchDialog=lazy(()=>import("../specific/SearchDialog"))
 const NotficationsDailog=lazy(()=>import("../specific/Notfications"))
