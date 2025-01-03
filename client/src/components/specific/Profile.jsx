@@ -1,6 +1,6 @@
-import React from 'react'
 import { Avatar, Stack, Typography } from "@mui/material";
 import { Face as FaceIcon,AlternateEmail as UserNameIcon, CalendarMonth as CalendarIcon } from '@mui/icons-material';
+import moment from "moment"
 const Profile = () => {
   return (
     <>
@@ -17,11 +17,13 @@ sx={{
 <ProfileCard heading={"Bio"} text={"sadas"} />
 <ProfileCard heading={"UserName"} text={"@zeeshan"} Icon={<UserNameIcon/>}/>
 <ProfileCard heading={"Name"} text={"Zeeshan Yousaf"} Icon={<FaceIcon/>}/>
+<ProfileCard heading={"Joined"} text={moment("Fri Jan 03 2025").fromNow()} Icon={<CalendarIcon/>}/>
 
       </Stack>
     </>
   )
 }
+// eslint-disable-next-line react/prop-types
 const ProfileCard=({text,Icon,heading})=>{
     return(
         
