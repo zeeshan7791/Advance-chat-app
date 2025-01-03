@@ -28,3 +28,45 @@ export const sampleChats = [
     members: ["1", "2"],
   },
 ];
+const sampleUsers = [
+
+  {
+    name: "zeeshan",
+    _id: 1,
+    avatar: "avatar.png",
+  },
+  {
+    name: "Ali",
+    _id: 2,
+    avatar: "avatar.png",
+  },
+  {
+    name: "Aqeel",
+    _id: 3,
+    avatar: "avatar.png",
+  },
+];
+
+export const sampleNotifications = [
+  {
+    _id: 3,
+    sender: {
+      name: "Aqeel",
+      avatar: "avatar.png",
+    },
+  },
+  {
+    _id: 2,
+    sender: {
+      name: "Zeeshan",
+      avatar: "avatar.png",
+    },
+  },
+  {
+    _id: 1,
+    sender: {
+      name: "Ali",
+      avatar: "avatar.png",
+    },
+  },
+];
